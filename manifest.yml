@@ -2,8 +2,8 @@ applications:
 - services:
   - SQL Database-eq
   disk_quota: 1024M
-  host: blograils
-  name: blograils
+  host: tintuc
+  name: tintuc
   path: .
   domain: ng.bluemix.net
   instances: 1
