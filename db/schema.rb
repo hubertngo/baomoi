@@ -29,23 +29,13 @@ ActiveRecord::Schema.define(:version => 20141123052941) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.string   "image"
-    t.string   "desc"
-    t.text     "content"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
     t.string   "username"
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
+    t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
