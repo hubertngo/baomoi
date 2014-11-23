@@ -12,7 +12,9 @@ class ArticlesController < ApplicationController
   end
   def index
     @articles = Article.all
-
+    if params[:category].present?
+      @articles = Article.where(category_id: Category.where(name: params[:category]) )
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @articles }

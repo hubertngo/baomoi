@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(:version => 20141123052941) do
   end
 
   create_table "posts", :force => true do |t|
-    t.text     "title"
+    t.string   "title"
     t.string   "image"
-    t.text     "desc"
+    t.string   "desc"
     t.text     "content"
     t.integer  "category_id"
     t.datetime "created_at",  :null => false

@@ -12,7 +12,7 @@ gem 'rails', '3.2.13'
 gem 'ibm_db'
 
 
-# Gems used only for assets and not required
+# Gems used only for assets and ont required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -46,3 +46,4 @@ gem 'whenever', :require => false
 gem 'rails_admin'
 
 gem "devise"
+gem 'rufus-scheduler'
