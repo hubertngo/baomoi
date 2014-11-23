@@ -2,7 +2,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def getdata
-    Api::Vnnet.crawling
+    # Api::Vnnet.crawling
+    require 'open-uri'
+    require 'nokogiri'
+    website = "http://vietnamnet.vn"
+    page = Nokogiri::HTML(open(website+"/vn/giao-duc/"))
+    article_list = page.css(".ArticleCateList")
+    @article = article_list[0].text
   end
   def index 
     @posts = Post.all
