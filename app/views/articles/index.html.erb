@@ -1,0 +1,19 @@
+
+<h1>Articles</h1>
+<%= link_to "Getdata",getdata_articles_path %>
+<% @articles.each do |article| %>
+    <div class="minipost">
+    <h3><%= article.title %></h3><p class="date"><%= article.created_at.to_s(:postdate) %></p><br>
+    <p><%= truncate(article.content, length: 300) %></p><br>
+    <ul class="postmenu">    
+       <li><%= link_to 'Read More', article %></li>
+       <li><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'} %></li>       
+    </ul>
+    </div>
+
+  
+<% end %>
+
+<div style="clear: both;"></div>
+
+<%= link_to 'NEW POST', new_article_path, { :class => "button"} %><br>

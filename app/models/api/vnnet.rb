@@ -22,7 +22,7 @@ module Api::Vnnet
 		  	category  = Category.first||Category.new
 		  	category.name = "Giao Duc"
 		  	category.save
-		  	article = Post.where(:title => name).first || category.posts.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
+		  	article = Article.where(:title => name).first || category.articles.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
             article.save
 		  	p "success clawer "+ name	
 		  end

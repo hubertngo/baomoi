@@ -1,11 +1,18 @@
 Blog::Application.routes.draw do
+  resources :articles do
+    collection do
+        get 'getdata'
+      end
+  end
+
+
   resources :posts do
     collection do
         get 'getdata'
       end
   end
   
-  root :to => 'posts#index'
+  root :to => 'articles#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
