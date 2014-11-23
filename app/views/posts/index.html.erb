@@ -1,23 +1,6 @@
 
 <h1>posts___</h1>
 
-<% @posts.each do |post| %>
-    <div class="minipost">
-    <h3><%= post.title %></h3><p class="date"><%= post.created_at.to_s(:postdate) %></p><br>
-    <p><%= truncate(post.content, length: 300) %></p><br>
-    <ul class="postmenu">    
-       <li><%= link_to 'Read More', post %></li>
-       <li><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?'} %></li>       
-    </ul>
-    </div>
-
-  
-<% end %>
-
-<div style="clear: both;"></div>
-
-<%= link_to 'NEW POST', new_post_path, { :class => "button"} %><br>
-
 
 
 
