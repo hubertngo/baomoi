@@ -1,6 +1,6 @@
 applications:
 - services:
-  - blogSQLDB
+  - SQL Database-eq
   disk_quota: 1024M
   host: blograils
   name: blograils
@@ -8,4 +8,4 @@ applications:
   domain: ng.bluemix.net
   instances: 1
   memory: 256M
-  buildpack: https://github.com/ibmdb/db2rubybuildpack
+  buildpack: https://hub.jazz.net/git/tonynguyen/tinhost
