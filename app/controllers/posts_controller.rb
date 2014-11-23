@@ -7,8 +7,26 @@ class PostsController < ApplicationController
     require 'nokogiri'
     website = "http://vietnamnet.vn"
     page = Nokogiri::HTML(open(website+"/vn/giao-duc/"))
-    article_list = page.css(".ArticleCateList")
-    @article = article_list[0].text
+   begin
+      article_list = page.css(".ArticleCateList")
+      articles = article_list[0].css(".ArticleCateItem")
+      articles[0..-2].each do |article|
+        name = article.css("a")[0].attribute("title").value
+        link = article.css("a")[0].attribute("href").value
+        desc = article.css("h3")[0].text
+        image = article.css("img")[0].attribute("src").value
+        page_inside = Nokogiri::HTML(open(website+link))
+        content = page_inside.css("#ArticleContent").text
+        category  = Category.first||Category.new
+        category.name = "Giao Duc"
+        category.save
+        article = Post.where(:title => name).first || category.posts.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
+            article.save
+        p "success clawer "+ name 
+      end
+    rescue Exception => e
+      @message = e
+    end
   end
   def index 
     @posts = Post.all
