@@ -23,7 +23,7 @@ module Api::Vnnet
 		  	category  = Category.where(:name => "Giao Duc").first||Category.new
 		  	category.name = "Giao Duc"
 		  	category.save
-		  	article = Article.where(:title => name).first || category.articles.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
+		  	article = Article.where(:image => image).first || category.articles.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
             article.save
 		  	p "success clawer "+ name	
 		  end
@@ -45,7 +45,7 @@ module Api::Vnnet
 		  	category  = Category.where(:name => "Chinh Tri").first||Category.new
 		  	category.name = "Chinh Tri"
 		  	category.save
-		  	article = Article.where(:title => name).first || category.articles.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
+		  	article = Article.where(:image => image).first || category.articles.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
             article.save
 		  	p "success clawer "+ name	
 		  end
@@ -67,7 +67,7 @@ module Api::Vnnet
 		  	category  = Category.where(:name => "Kinh Te").first||Category.new
 		  	category.name = "Kinh Te"
 		  	category.save
-		  	article = Article.where(:title => name).first || category.articles.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
+		  	article = Article.where(:image => image).first || category.articles.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
             article.save
 		  	p "success clawer "+ name	
 		  end
