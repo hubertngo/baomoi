@@ -1,14 +1,12 @@
 Blog::Application.routes.draw do
+  devise_for :users
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :articles do
     collection do
         get 'getdata'
-      end
-  end
-
-
-  resources :posts do
-    collection do
-        get 'getdata'
+        get 'taotaikhoan'
       end
   end
   

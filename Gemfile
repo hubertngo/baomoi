@@ -43,3 +43,6 @@ gem 'jquery-rails'
 
 gem 'nokogiri'
 gem 'whenever', :require => false
+gem 'rails_admin'
+
+gem "devise"

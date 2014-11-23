@@ -3,8 +3,11 @@
 <h1><%= link_to "Getdata",getdata_articles_path %></h1>
 <% @articles.each do |article| %>
     <div class="minipost">
-    <h3><%= article.title %></h3><p class="date"><%= article.created_at.to_s(:postdate) %></p><br>
-    <p><%= truncate(article.content, length: 300) %></p><br>
+    <h3><%= article.title %>
+    </h3>
+    <p class="date"><%= article.created_at.to_s(:postdate) %></p><br>
+    <img src=<%=article.image %>>
+    <p><%= truncate(article.desc, length: 300) %></p><br>
     <ul class="postmenu">    
        <li><%= link_to 'Read More', article %></li>
        <li><%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?'} %></li>       
