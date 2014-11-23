@@ -19,7 +19,9 @@ module Api::Vnnet
 		  	image = article.css("img")[0].attribute("src").value
 		  	page_inside = Nokogiri::HTML(open(self.url+link))
 		  	content = page_inside.css("#ArticleContent").text
-		  	category = Category.first
+		  	category  = Category.first||Category.new
+		  	category.name = "Giao Duc"
+		  	category.save
 		  	article = Post.where(:title => name).first || category.posts.new(title:"#{name}",image:"#{image}",content:"#{content}",desc:"#{desc}")
             article.save
 		  	p "success clawer "+ name	
