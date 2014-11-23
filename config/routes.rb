@@ -1,5 +1,9 @@
 Blog::Application.routes.draw do
-  resources :posts
+  resources :posts do
+    collection do
+        get 'getdata'
+      end
+  end
   
   root :to => 'posts#index'
 

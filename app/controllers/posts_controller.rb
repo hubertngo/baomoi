@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
-  def index
-    Api::Vnnet.crawling 
+  def getdata
+    Api::Vnnet.crawling
+    redirect_to posts_path, status: "completed get data" 
+  end
+  def index 
     @posts = Post.all
 
     respond_to do |format|
