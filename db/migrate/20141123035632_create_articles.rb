@@ -6,7 +6,6 @@ class CreateArticles < ActiveRecord::Migration
       t.string :image
       t.text :desc
       t.references :category , index: true 
-      t.references :tobao , index: true 
       t.timestamps
     end
   end
