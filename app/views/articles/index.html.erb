@@ -1,3 +1,7 @@
+<div class="getdata" style="margin-bottom:30px;">
+<%= link_to "Get data",getdata_articles_path,:class => "btn btn-success",:style => "color:white;" %>
+<%= link_to "Link Api",getdata_api_index_path,:class => "btn btn-info",:style => "color:white;" %>
+</div>
 <div class="row">
 <% @articles.each do |article| %>
   <div class="col-sm-6 col-md-4">

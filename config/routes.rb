@@ -9,6 +9,11 @@ Blog::Application.routes.draw do
         get 'taotaikhoan'
       end
   end
+  resources :api do
+    collection do
+        get 'getdata'
+      end
+  end
   
   root :to => 'articles#index'
 

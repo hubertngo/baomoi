@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   end
   def getdata
     Api::Vnnet.crawling
+    redirect_to articles_path, alert: "success clawer data"
   end
   def index
     @articles = Article.all
